@@ -94,7 +94,7 @@ def analyze_image(image_path, save_path, model_path, column_path, filename):
 @app.post("/upload/")
 @app.post("/upload")
 async def analysis_lateral(request: Request, file: UploadFile = File(...)):
-    base_url = "http://localhost:8080" 
+    base_url = "http://localhost:8000" 
 
     contents = await file.read()
     filename = file.filename
@@ -168,4 +168,4 @@ async def clear():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
